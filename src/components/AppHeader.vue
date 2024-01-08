@@ -7,11 +7,18 @@ export default {
 </script>
 
 <template>
-  <img src="../../public/Yu-Gi-Oh!.png" alt="Yu-Gi_oh logo">
-  <h1>Yu-Gi-Oh Api</h1>
+  <header>
+    <img src="../../public/Yu-Gi-Oh!.png" alt="Yu-Gi_oh logo">
+    <h1>Yu-Gi-Oh Api</h1>
+  </header>
 </template>
 
 <style scoped>
+header {
+  background-color: white;
+  margin-bottom: 50px
+}
+
 img {
   display: inline-block;
   max-height: 30px;
