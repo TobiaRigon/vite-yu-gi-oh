@@ -1,5 +1,6 @@
 <script >
 import YgoCard from './YgoCard.vue'
+import { store } from '../store';
 
 
 export default {
@@ -8,6 +9,12 @@ export default {
     components: {
         YgoCard,
     },
+
+    data() {
+        return {
+            store,
+        }
+    }
 }
 
 
@@ -15,7 +22,26 @@ export default {
 
 <template>
     <h1>YgoList</h1>
-    <YgoCard />
+
+    <div class="container">
+        <div class="col" v-for="card in store.cardList" :key="card">
+            <YgoCard />
+        </div>
+    </div>
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    .col {
+        width: calc(100% / 5);
+    }
+
+
+}
+</style>

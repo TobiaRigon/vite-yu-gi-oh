@@ -1,4 +1,6 @@
 <script >
+
+
 export default {
     name: "YgoCard",
 }
@@ -7,7 +9,7 @@ export default {
 </script>
 
 <template>
-    <h1>YgoCard</h1>
+    <div>ciao</div>
 </template>
 
 <style scoped></style>
