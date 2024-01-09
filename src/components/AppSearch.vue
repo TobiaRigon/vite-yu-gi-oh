@@ -18,7 +18,7 @@ export default {
             .get(store.arcURL)
 
             .then((res) => {
-                const archetypes = res.data.slice(0, 15).map(item => item.archetype_name);
+                const archetypes = res.data.slice(0, 30).map(item => item.archetype_name);
                 store.archetypes = archetypes;
                 console.log(archetypes);
             })
@@ -34,7 +34,7 @@ export default {
 </script>
 
 <template>
-    <select name="select-status" id="" v-model="store.searchArchetype">
+    <select name="select-status" id="" v-model="store.searchArchetype" @change="$emit('PerformFilter')">
         <option v-for="archetype in store.archetypes" :key="archetype" :value="archetype">
             {{ archetype }}
         </option>

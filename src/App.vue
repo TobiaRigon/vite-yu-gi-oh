@@ -25,14 +25,18 @@ export default {
   },
   methods: {
     getCard() {
+      let myURL = store.apiURL;
 
+      if (store.searchArchetype) {
+        myURL += `&archetype=${store.searchArchetype}`; // Fix here
+      }
 
       axios
-        .get(store.apiURL)
-        .then((res => {
-          console.log(res.data.data)
+        .get(myURL) // Fix here
+        .then((res) => {
+          console.log(store.searchArchetype)
           store.cardList = res.data.data;
-        }))
+        })
         .catch((err) => {
           console.log('Errori', err);
         });
@@ -52,7 +56,7 @@ export default {
 
 <template>
   <AppHeader />
-  <AppSearch />
+  <AppSearch @PerformFilter="getCard" />
   <YgoList />
 </template>
 
