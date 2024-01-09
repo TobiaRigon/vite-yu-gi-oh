@@ -15,7 +15,7 @@ export default {
     <div>
         <img :src="info.card_images[0].image_url" alt="">
         <h3>{{ info.name }}</h3>
-        <h4>{{ info.type }}</h4>
+        <h4>{{ info.archetype }}</h4>
     </div>
 </template>
 

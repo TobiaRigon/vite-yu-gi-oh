@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import AppHeader from './components/AppHeader.vue'
 import YgoList from './components/YgoList.vue'
+import AppSearch from './components/AppSearch.vue'
 
 
 // importa store
@@ -14,6 +15,7 @@ export default {
   components: {
     AppHeader,
     YgoList,
+    AppSearch,
   },
 
   data() {
@@ -48,6 +50,7 @@ export default {
 
 <template>
   <AppHeader />
+  <AppSearch />
   <YgoList />
 </template>
 

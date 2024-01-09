@@ -21,9 +21,6 @@ export default {
 </script>
 
 <template>
-    <div>
-        Alien
-    </div>
     <div class="container">
 
         <div class="foundbar">
@@ -39,7 +36,7 @@ export default {
 <style lang="scss" scoped>
 .container {
 
-
+    padding: 15px;
     width: 80%;
     margin: 0 auto;
     display: flex;
