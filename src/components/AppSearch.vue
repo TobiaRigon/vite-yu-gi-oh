@@ -1,4 +1,5 @@
 <script >
+import axios from 'axios';
 import { store } from '../store';
 
 export default {
@@ -9,7 +10,22 @@ export default {
         return {
             store,
         }
-    }
+    },
+
+    mounted() {
+
+        axios
+            .get(store.arcURL)
+
+            .then((res) => {
+                const archetypes = res.data.slice(0, 15).map(item => item.archetype_name);
+                store.archetypes = archetypes;
+                console.log(archetypes);
+            })
+            .catch((err) => {
+                console.log('Errori', err);
+            });
+    },
 
 };
 
