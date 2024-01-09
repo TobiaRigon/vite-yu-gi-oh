@@ -25,6 +25,8 @@ export default {
   },
   methods: {
     getCard() {
+
+
       axios
         .get(store.apiURL)
         .then((res => {
