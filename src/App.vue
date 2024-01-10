@@ -29,7 +29,9 @@ export default {
 
 
       if (store.searchArchetype !== '') {
-        myURL = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.searchArchetype}`; // Fix here
+        myURL += `?archetype=${store.searchArchetype}`; // Fix here
+      } else {
+        myURL += `?num=20&offset=0`
       }
 
       axios
