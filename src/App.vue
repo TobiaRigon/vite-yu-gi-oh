@@ -27,8 +27,9 @@ export default {
     getCard() {
       let myURL = store.apiURL;
 
-      if (store.searchArchetype) {
-        myURL += `&archetype=${store.searchArchetype}`; // Fix here
+
+      if (store.searchArchetype !== '') {
+        myURL = `https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=${store.searchArchetype}`; // Fix here
       }
 
       axios
